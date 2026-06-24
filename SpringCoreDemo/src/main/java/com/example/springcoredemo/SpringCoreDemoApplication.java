@@ -13,8 +13,8 @@ public class SpringCoreDemoApplication {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         Order order = context.getBean(Order.class);
         order.placeOrder();
-        Payment pay =  context.getBean(Payment.class);
-        pay.pay();
+//        Payment pay =  context.getBean(Payment.class);
+//        pay.pay();
 
     }
 
