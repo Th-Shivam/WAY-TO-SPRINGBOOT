@@ -1,5 +1,6 @@
 package com.example.springcoredemo;
 
+import com.example.springcoredemo.payments.Payment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
