@@ -1,6 +1,5 @@
 package com.example.springcoredemo;
 
-import org.springframework.stereotype.Component;
 
 public class User {
     private String name;
