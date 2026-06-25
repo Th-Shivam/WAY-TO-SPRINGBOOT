@@ -12,6 +12,9 @@ public class CircularDependencyApplication {
 
     ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
+    Order order = context.getBean(Order.class);
+    order.placeOrder();
+
     }
 
 }

@@ -1,17 +1,19 @@
 package me.thakurshivamsingh.circulardependency;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Order {
 
+    @Autowired
     private Payment payment;
 
-    public Order(Payment payment) {
-        this.payment = payment;
-    }
+//    public Order(Payment payment) {
+//        this.payment = payment;
+//    }
 
-    public void order() {
+    public void placeOrder() {
         payment.pay();
         System.out.println("Order completed");
     }
