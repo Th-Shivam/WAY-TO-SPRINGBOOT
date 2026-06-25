@@ -16,6 +16,9 @@ public class SpringCoreDemoApplication {
 //        Payment pay =  context.getBean(Payment.class);
 //        pay.pay();
 
+        User user1 =  context.getBean(User.class);
+        System.out.println(user1.getName());
+
     }
 
 }
