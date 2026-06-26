@@ -1,21 +1,22 @@
 package me.thakurshivamsingh.beanscope;
 
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Lazy
+@Scope("prototype")
 public class Order {
 
-//    private Payment payment;
+    private Payment payment;
 
     public Order(Payment payment) {
-//        this.payment = payment;
+        this.payment = payment;
         System.out.println("Order constructor");
     }
 
     public void placeOrder(){
-//        payment.pay();
+        payment.pay();
         System.out.println("Order Placed !");
     }
 
