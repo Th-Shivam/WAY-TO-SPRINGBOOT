@@ -9,6 +9,8 @@ public class BeanLifecycleApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        CartService cart =  context.getBean(CartService.class);
+        cart.addToCart();
     }
 
 }
