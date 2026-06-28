@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 @ComponentScan("me.thakurshivamsingh")
 public class AppConfig {
 
-    @Bean(initMethod = "start")
-    public CartService cartInit(){
-        return new CartService();
-    }
+//    @Bean(initMethod = "start")
+//    public CartService cartInit(){
+//        return new CartService();
+//    }
 }

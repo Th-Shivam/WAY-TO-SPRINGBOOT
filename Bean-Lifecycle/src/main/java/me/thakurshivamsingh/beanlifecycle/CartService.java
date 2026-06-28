@@ -1,12 +1,13 @@
 package me.thakurshivamsingh.beanlifecycle;
 
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
 
-//@Component
+@Component
 public class CartService /*implements InitializingBean*/ {
     Map<Integer, String> mp ;
 
@@ -21,11 +22,20 @@ public class CartService /*implements InitializingBean*/ {
 //        mp.put(1,"B");
 //    }
 
-    public void start(){
+//    public void start(){
+//        System.out.println("Initialization callback");
+//        mp.put(0,"A");
+//        mp.put(1,"B");
+//    }
+
+        @PostConstruct
+        public void start2(){
         System.out.println("Initialization callback");
         mp.put(0,"A");
         mp.put(1,"B");
     }
+
+
 
     public void addToCart(){
         System.out.println("Adding to cart");
