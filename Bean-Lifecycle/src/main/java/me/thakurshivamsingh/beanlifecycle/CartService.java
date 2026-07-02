@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
 
-//@Component
+@Component
 public class CartService /*implements InitializingBean , DisposableBean*/ {
     Map<Integer, String> mp ;
 
@@ -37,6 +37,13 @@ public class CartService /*implements InitializingBean , DisposableBean*/ {
         mp.put(1,"B");
     }
 
+//    public void stop(){
+//        mp.clear();
+//        System.out.println("Destroying callback");
+//        System.out.println("Bean is destroying !");
+//    }
+
+    @PreDestroy
     public void stop(){
         mp.clear();
         System.out.println("Destroying callback");
