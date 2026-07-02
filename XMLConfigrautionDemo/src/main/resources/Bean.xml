@@ -4,6 +4,11 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-        <bean id="orderService" class="com.vayu.xmlconfigrautiondemo.OrderService"/>
+        <bean id="paymentService" class="com.vayu.xmlconfigrautiondemo.PaymentService"/>
+
+        <bean id="orderService" class="com.vayu.xmlconfigrautiondemo.OrderService">
+        <constructor-arg ref="paymentService"/>
+        </bean>
+
 
 </beans>
