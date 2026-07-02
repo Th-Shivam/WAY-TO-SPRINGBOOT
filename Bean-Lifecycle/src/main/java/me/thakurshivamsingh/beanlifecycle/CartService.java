@@ -1,6 +1,7 @@
 package me.thakurshivamsingh.beanlifecycle;
 
 import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
@@ -8,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Component
-public class CartService /*implements InitializingBean*/ {
+public class CartService implements DisposableBean/*implements InitializingBean*/ {
     Map<Integer, String> mp ;
 
     public CartService() {
@@ -42,4 +43,9 @@ public class CartService /*implements InitializingBean*/ {
         System.out.println(mp.get(0));
     }
 
+    @Override
+    public void destroy() throws Exception {
+        mp.clear();
+        System.out.println("Bean is destroying !");
+    }
 }
