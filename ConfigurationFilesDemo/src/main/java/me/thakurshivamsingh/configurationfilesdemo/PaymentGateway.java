@@ -5,13 +5,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class PaymentGateway {
+    @Value("${PaymentGateway.type}")
     private String type;
+
+    @Value("${PaymentGateway.retry-count}")
     private int retryCount;
 
-    public PaymentGateway(@Value("${PaymentGateway.type}")String type,@Value("${PaymentGateway.retry-count}") int retryCount) {
-        this.type = type;
-        this.retryCount = retryCount;
-    }
+//    public PaymentGateway(@Value("${PaymentGateway.type}")String type,@Value("${PaymentGateway.retry-count}") int retryCount) {
+//        this.type = type;
+//        this.retryCount = retryCount;
+//    }
 
     public void setRetryCount(int retryCount) {
         this.retryCount = retryCount;
