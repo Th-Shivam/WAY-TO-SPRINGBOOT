@@ -1,15 +1,24 @@
 package me.thakurshivamsingh.simplecrud.service;
 
+import me.thakurshivamsingh.simplecrud.entity.Student;
+import me.thakurshivamsingh.simplecrud.repository.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class StudentService {
 
-    //1 . Listen to an endpoint
+    //1 . Buiseness logic
+    @Autowired
+    private StudentRepository studentRepository;
 
-    //2 . Buiseness logic
+    public Student createStudent(Student studentreq){
+        System.out.println("Entered StudentService");
+       Student studentresp = studentRepository.saveStudent(studentreq);
+        System.out.println("exiting StudentService");
+        return studentresp;
 
-    //3. Interact with DB
+    }
 
-    //4. Response
 }
