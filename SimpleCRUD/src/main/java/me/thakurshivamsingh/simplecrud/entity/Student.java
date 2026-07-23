@@ -7,19 +7,11 @@ import jakarta.persistence.Id;
 public class Student {
     @Id
     private Long id;
-    private String Name;
-    private String email;
-    private int roll ;
+    private String name;
     private int age;
-    private String Subject ;
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
-    }
+    private String email;
+    private int rollNo;
+    private String subject;
 
     public Long getId() {
         return id;
@@ -29,12 +21,12 @@ public class Student {
         this.id = id;
     }
 
-    public String getSubject() {
-        return Subject;
+    public String getName() {
+        return name;
     }
 
-    public void setSubject(String subject) {
-        Subject = subject;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getAge() {
@@ -45,19 +37,27 @@ public class Student {
         this.age = age;
     }
 
-    public int getRoll() {
-        return roll;
-    }
-
-    public void setRoll(int roll) {
-        this.roll = roll;
-    }
-
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getRollNo() {
+        return rollNo;
+    }
+
+    public void setRollNo(int rollNo) {
+        this.rollNo = rollNo;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 }
